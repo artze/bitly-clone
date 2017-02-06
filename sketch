@@ -1,0 +1,13 @@
+create _bitly_url_table
+
+table
+- id
+- long url
+- short url
+- timestamp
+
+localhost.com/(random numbers)
+
+Model features
+
+- validation of long url - unique
