@@ -8,7 +8,6 @@ class Url < ActiveRecord::Base
 		end
 	end
 	def shorten
-		# generate random code
 		characters = [('a'..'z').to_a, ('A'..'Z').to_a, (0..9).to_a].flatten
 		serial_code = characters.sample(7)
 		serial_code = serial_code.join('')

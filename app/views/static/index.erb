@@ -28,15 +28,18 @@
 		<% unless Url.all.empty? %>
 			<table align="center">
 				<col width="260">
-				<col width="120">
+				<col width="260">
+				<col width="100">
 				<tr>
 					<th height="30">URL</th>
 					<th height="30">Shortn URL</th>
+					<th height="30">Click Count</th>
 				</tr>
-				<% Url.all.order(created_at: :desc).each do |result| %>
+				<% Url.all.order(click_count: :desc).each do |result| %>
 				<tr>
 					<td><%=	result.link %></td>
 					<td><a href="<%= 'http://localhost:9393/' + result.serial_code %>"><%= 'http://localhost:9393/' + result.serial_code %></a></td>
+					<td><%=	result.click_count %></td>
 				</tr>
 				<% end %>
 			</table>
