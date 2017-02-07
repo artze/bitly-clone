@@ -7,6 +7,7 @@ class Url < ActiveRecord::Base
 			errors.add(:link, 'Invalid URL entered')
 		end
 	end
+	
 	def shorten
 		characters = [('a'..'z').to_a, ('A'..'Z').to_a, (0..9).to_a].flatten
 		serial_code = characters.sample(7)

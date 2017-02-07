@@ -2,6 +2,10 @@ get '/' do
   erb :"static/index"
 end
 
+get '/urls' do
+	redirect '/'
+end
+
 post '/urls' do
 	new_url = Url.new
 	new_url.link = params[:long_url].to_s
