@@ -1,7 +1,31 @@
-<div class="form">
-	<form action="#" method="">
-	    Enter URL: 
-	    <input type="text" name="long_url">
-	    <input type="submit" value="shortn">
-	</form>
+<div class="container">
+	<div class="form">
+		<form action="/urls" method="POST"> 
+		    <div class="row justify-content-center">
+			    <div class="col-5">
+			    	<input type="text" name="long_url" class="form-control" placeholder="Enter URL here">
+			    </div>
+		    <input type="submit" value="shortn" class="btn btn-color">
+		    </div>
+		</form>
+	</div>
+
+	<div class="url-list">
+		<% unless Url.all %>
+			<table align="center">
+				<col width="220">
+				<col width="120">
+				<tr>
+					<th height="30">URL</th>
+					<th height="30">Shortened URL</th>
+				</tr>
+				<% Url.all.order(created_at: :desc).each do |result| %>
+				<tr>
+					<td><%=	result.link %></td>
+					<td><a href="<%= 'http://localhost:9393/' + result.serial_code %>"><%= 'http://localhost:9393/' + result.serial_code %></a></td>
+				</tr>
+				<% end %>
+			</table>
+		<% end %>
+	</div>
 </div>
