@@ -7,7 +7,8 @@ post '/urls' do
 	new_url.link = params[:long_url].to_s
 	new_url.serial_code = new_url.shorten
 	new_url.save
-	redirect '/'
+	@error_messages = new_url.errors
+	erb :'static/index'
 end
 
 get '/:serial_code' do

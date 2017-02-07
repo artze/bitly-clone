@@ -2,22 +2,36 @@
 	<div class="form">
 		<form action="/urls" method="POST"> 
 		    <div class="row justify-content-center">
-			    <div class="col-5">
-			    	<input type="text" name="long_url" class="form-control" placeholder="Enter URL here">
+			    <div class="col-6">
+			    		<input type="text" name="long_url" class="form-control" placeholder="Enter URL here">
 			    </div>
 		    <input type="submit" value="shortn" class="btn btn-color">
 		    </div>
 		</form>
 	</div>
 
-	<div class="url-list">
-		<% unless Url.all %>
+	<div class="row justify-content-center">
+		<div class="col-4">
+				<% if @error_messages %>
+					<% @error_messages.messages[:link].each do |msg|%>
+					<p class="error-msg">
+					<%= msg %>
+					</p>
+					<%end%>
+				<% end %>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="url-list row justify-content-center">
+		<% unless Url.all.empty? %>
 			<table align="center">
-				<col width="220">
+				<col width="260">
 				<col width="120">
 				<tr>
 					<th height="30">URL</th>
-					<th height="30">Shortened URL</th>
+					<th height="30">Shortn URL</th>
 				</tr>
 				<% Url.all.order(created_at: :desc).each do |result| %>
 				<tr>
