@@ -19,9 +19,13 @@ post '/urls' do
 	new_url.link = params[:long_url].to_s
 	new_url.serial_code = new_url.shorten
 	new_url.click_count = 0
-	new_url.save
-	@error_messages = new_url.errors
-	erb :'static/index'
+	if new_url.save
+		new_url.to_json
+	else
+		{error: 'Invalid URL'}.to_json
+	end
+	# @error_messages = new_url.errors
+	# erb :'static/index'
 end
 
 get '/:serial_code' do
