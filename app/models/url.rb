@@ -3,7 +3,7 @@ class Url < ActiveRecord::Base
 	validates :link, presence:{message: 'URL required'}
 	validate :check_uri_validity
 	def check_uri_validity
-		if URI.parse(self.link).host.nil?
+		if URI.parse(URI.escape(self.link)).host.nil?
 			errors.add(:link, 'Invalid URL entered')
 		end
 	end

@@ -2,6 +2,7 @@
 
 body {
 	background-color: #f5f5f5 ;
+	margin-bottom: 40px;
 }
 
 h1 {
@@ -43,6 +44,16 @@ th {
 	background-color: #e6e600;
 	margin-left: -0.5em;
 	border-radius: 0;
+	cursor: pointer;
+}
+
+.btn-color:hover {
+	opacity: 0.7;
+}
+
+.btn-color:active {
+	opacity: 0.7;
+	background-color: #b3b300;
 }
 
 a {
@@ -50,11 +61,41 @@ a {
 }
 
 a:hover {
-	color: #d73737;
+	color: #b3b300;
 }
 
 .error-msg {
 	font-family: 'Maven Pro', sans-serif;
 	color: #d73737;
 	font-style: italic;
+}
+
+.footer12 {
+	display: inline-block;
+	opacity: 0.6;
+	border-top: 1px solid #a6a6a6;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-family: 'Maven Pro', sans-serif;
+  background-color: #ececec;
+}
+
+span.footer-links {
+	margin-left: 2em;
+	font-size: 14px;
+}
+
+span.footer-links a:hover {
+	color: #b3b300;
+	text-decoration: none;
+}
+
+.descriptive-content {
+	margin-top: 3em;
+	font-family: 'Maven Pro', sans-serif;
+	color: #616161;
+	font-size: 15px;
 }

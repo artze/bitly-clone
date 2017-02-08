@@ -6,6 +6,14 @@ get '/urls' do
 	redirect '/'
 end
 
+get '/howto' do
+	erb :'static/howto'
+end
+
+get '/about' do
+	erb :'static/about'
+end
+
 post '/urls' do
 	new_url = Url.new
 	new_url.link = params[:long_url].to_s
