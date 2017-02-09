@@ -7,10 +7,11 @@ body {
 
 h1 {
 	margin-top: 3em;
-	color: #a6a6a6;
+	color: #616161;
 	font-family: 'Maven Pro', sans-serif;
 	text-align: center;
 	font-size: 50px;
+	font-weight: 500;
 }
 
 #header-caps {
@@ -20,6 +21,11 @@ h1 {
 .form {
 	margin-top: 3em;
 	text-align: center;
+}
+
+#url-input::-webkit-input-placeholder {
+	color: #616161;
+	opacity: 0.6;
 }
 
 .url-list {
@@ -60,13 +66,14 @@ a {
 	color: #616161;
 }
 
-a:hover {
+a:hover, a:focus {
 	color: #b3b300;
+	text-decoration: none;
 }
 
 .footer {
 	display: inline-block;
-	opacity: 0.6;
+	opacity: 0.7;
 	border-top: 1px solid #a6a6a6;
   position: fixed;
   bottom: 0;
@@ -79,10 +86,21 @@ a:hover {
 
 span.footer-links {
 	margin-left: 2em;
+	color: #545454;
 	font-size: 14px;
 }
 
 span.footer-links a:hover {
+	color: #b3b300;
+	text-decoration: none;
+}
+
+span.footer-links a:active {
+	color: #b3b300;
+	text-decoration: none;
+}
+
+span.footer-links a:focus {
 	color: #b3b300;
 	text-decoration: none;
 }
@@ -115,9 +133,9 @@ span.footer-links a:hover {
 }
 
 @-webkit-keyframes error-msg-fadeOut {
-  0%   { background-color:rgba(255, 20, 20, 0.8); }
-  50%  { background-color:rgba(255, 20, 20, 0.3); }
-  100% { background-color:rgba(255, 20, 20, 0.0); }
+  0%   { background-color:rgba(255, 0, 0, 0.8); }
+  50%  { background-color:rgba(255, 0, 0, 0.3); }
+  100% { background-color:rgba(255, 0, 0, 0.0); }
 }
 
 .error-msg {
