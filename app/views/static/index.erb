@@ -38,7 +38,7 @@
 				<% Url.all.order(click_count: :desc, created_at: :desc).each do |result| %>
 				<tr>
 					<td><%=	result.link %></td>
-					<td><a href="<%= 'http://localhost:9393/' + result.serial_code %>"><%= 'http://localhost:9393/' + result.serial_code %></a></td>
+					<td><a href="<%= request.base_url + '/' + result.serial_code %>"><%= request.base_url + '/' + result.serial_code %></a></td>
 					<td><%=	result.click_count %></td>
 				</tr>
 				<% end %>
