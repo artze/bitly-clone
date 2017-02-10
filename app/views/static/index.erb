@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="row justify-content-center">
-		<div class="col-5" id="error-new-entry">
+		<div class="col-8" id="error-new-entry">
 				<% if @error_messages %>
 					<% @error_messages.messages[:link].each do |msg|%>
 					<p class="error-msg">
@@ -28,7 +28,7 @@
 		<% unless Url.all.empty? %>
 			<table align="center">
 				<col width="260">
-				<col width="260">
+				<col width="400">
 				<col width="100">
 				<tr>
 					<th height="30">URL</th>
